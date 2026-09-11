@@ -19,8 +19,11 @@ import java.io.IOException;
 @Tag(name = "Postagens", description = "Endpoints do blog")
 public class PostagemController {
 
-    @Autowired
     private PostagemRepository repository;
+
+    public PostagemController(@Autowired PostagemRepository repository) {
+        this.repository = repository;
+    }
 
     // 1. GET: /postagens (Lista todas com imagens em Base64)
     @GetMapping
