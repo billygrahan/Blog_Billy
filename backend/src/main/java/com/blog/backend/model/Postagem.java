@@ -22,7 +22,6 @@ public class Postagem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
     private Integer postagemId;
 
     @Column(nullable = false, length = 50)
