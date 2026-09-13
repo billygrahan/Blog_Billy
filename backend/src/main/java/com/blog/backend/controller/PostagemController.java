@@ -101,7 +101,7 @@ public class PostagemController {
     }
 
     // 5. DELETE: /postagens/{id} (Remove por ID)
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     @Operation(summary = "Remove uma postagem por ID")
     public ResponseEntity<?> delete(@PathVariable Integer id) {
         return repository.findById(id).map(postagem -> {
