@@ -31,12 +31,12 @@ public class Postagem {
     private String mensagem;
 
     @Lob
-    @Column(name = "imagem")
     @JdbcTypeCode(SqlTypes.BINARY)
-    @JsonIgnore
+    @Column(name = "imagem", columnDefinition = "LONGBLOB")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private byte[] imagem;
 
-    // Retorna a imagem formatada em Data URI para o Swagger/Frontend exibir diretamente
+    @Transient
     @JsonProperty("imagemBase64")
     public String getImagemBase64() {
         if (this.imagem != null && this.imagem.length > 0) {
