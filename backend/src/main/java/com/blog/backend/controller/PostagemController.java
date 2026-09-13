@@ -103,10 +103,14 @@ public class PostagemController {
     // 5. DELETE: /postagens/{id} (Remove por ID)
     @DeleteMapping(value = "/{id}")
     @Operation(summary = "Remove uma postagem por ID")
-    public ResponseEntity<?> delete(@PathVariable Integer id) {
+    public ResponseEntity delete(@PathVariable("id") Integer id) {
+        if (id == null) {
+            return ResponseEntity.badRequest().body("ID não fornecido.");
+        }
+
         return repository.findById(id).map(postagem -> {
             repository.delete(postagem);
-            return ResponseEntity.ok((Object) postagem);
+            return ResponseEntity.ok().body("Postagem excluída com sucesso.");
         }).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Postagem não encontrada."));
     }
 }
