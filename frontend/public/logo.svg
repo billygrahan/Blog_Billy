@@ -1,0 +1,58 @@
+<svg viewBox="0 0 520 148" width="520" height="148" xmlns="http://www.w3.org/2000/svg" style="max-width: 90vw; height: auto;"><defs><style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap');
+
+            .hex-stroke {
+              stroke-dasharray: 312;
+              stroke-dashoffset: 312;
+              animation: drawHex 1s cubic-bezier(0.4,0,0.2,1) 0.1s forwards;
+            }
+            .hex-glow {
+              opacity: 0;
+              animation: fadeIn 0.8s ease 0.6s forwards;
+            }
+            .monogram {
+              opacity: 0;
+              animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.9s forwards;
+            }
+            .sep-line {
+              stroke-dasharray: 86;
+              stroke-dashoffset: 86;
+              animation: drawHex 0.5s ease 1.05s forwards;
+            }
+            .name-line {
+              opacity: 0;
+              transform: translateX(-12px);
+              animation: slideIn 0.55s cubic-bezier(0.25,0.46,0.45,0.94) 1.15s forwards;
+            }
+            .tag-line {
+              opacity: 0;
+              transform: translateX(-12px);
+              animation: slideIn 0.55s cubic-bezier(0.25,0.46,0.45,0.94) 1.35s forwards;
+            }
+            .accent-dot {
+              opacity: 0;
+              animation: fadeIn 0.4s ease 1.6s forwards;
+            }
+            .scan-bar {
+              animation: scan 2.8s ease-in-out 2s infinite;
+            }
+            @keyframes drawHex {
+              to { stroke-dashoffset: 0; }
+            }
+            @keyframes fadeIn {
+              to { opacity: 1; }
+            }
+            @keyframes popIn {
+              from { opacity: 0; transform: scale(0.6); }
+              to   { opacity: 1; transform: scale(1); }
+            }
+            @keyframes slideIn {
+              from { opacity: 0; transform: translateX(-12px); }
+              to   { opacity: 1; transform: translateX(0); }
+            }
+            @keyframes scan {
+              0%   { opacity: 0; transform: translateY(-30px); }
+              15%  { opacity: 0.18; }
+              85%  { opacity: 0.18; }
+              100% { opacity: 0; transform: translateY(30px); }
+            }
+          </style><filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="hexClip"><polygon points="80,22 126,48 126,100 80,126 34,100 34,48"/></clipPath></defs><g class="hex-glow"><polygon points="80,22 126,48 126,100 80,126 34,100 34,48" fill="#22D3EE" fill-opacity="0.07"/><rect class="scan-bar" x="34" y="22" width="92" height="8" fill="#22D3EE" fill-opacity="0.5" clip-path="url(#hexClip)"/></g><circle class="accent-dot" cx="80" cy="22" r="2.5" fill="#22D3EE" filter="url(#glow)"/><circle class="accent-dot" cx="126" cy="48" r="2.5" fill="#22D3EE" filter="url(#glow)"/><circle class="accent-dot" cx="126" cy="100" r="2.5" fill="#22D3EE" filter="url(#glow)"/><circle class="accent-dot" cx="80" cy="126" r="2.5" fill="#22D3EE" filter="url(#glow)"/><circle class="accent-dot" cx="34" cy="100" r="2.5" fill="#22D3EE" filter="url(#glow)"/><circle class="accent-dot" cx="34" cy="48" r="2.5" fill="#22D3EE" filter="url(#glow)"/><polygon class="hex-stroke" points="80,22 126,48 126,100 80,126 34,100 34,48" fill="none" stroke="#22D3EE" stroke-width="1.5" filter="url(#glow)"/><g class="monogram" style="transform-origin: 80px 74px;"><text x="80" y="74" font-family="'Space Grotesk', 'Segoe UI', system-ui, sans-serif" font-size="40" font-weight="700" fill="white" text-anchor="middle" dominant-baseline="middle" letter-spacing="-2" filter="url(#softGlow)">BG</text></g><line class="sep-line" x1="152" y1="31" x2="152" y2="117" stroke="#22D3EE" stroke-width="1" stroke-opacity="0.35"/><text class="name-line" x="170" y="48" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#22D3EE" fill-opacity="0.5" letter-spacing="2">portfolio</text><text class="name-line" x="170" y="83" font-family="'Space Grotesk', 'Segoe UI', system-ui, sans-serif" font-size="34" font-weight="700" fill="white" letter-spacing="1">BILLY GRAHAN</text><text class="tag-line" x="170" y="108" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="400" fill="#22D3EE" letter-spacing="3">&lt; WEB DEVELOPMENT /&gt;</text></svg>

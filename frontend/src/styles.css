@@ -1,0 +1,12 @@
+/* Import do Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Ajustes globais de layout */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #28a9c9;
+    /* Fundo suave em toda a página */
+}

@@ -1,0 +1,54 @@
+<div class="container py-4">
+
+  <!-- Cabeçalho com Logo Customizada -->
+  <header class="d-flex align-items-center justify-content-center mb-4 gap-3">
+    <div class="logo-container">
+      <img src="logo.svg" alt="Logo Billy Blog" class="logo-img">
+    </div>
+  </header>
+
+  <!-- Form de Criação -->
+  <div class="card mb-4 p-3 shadow-sm border-0">
+    <h3 class="h5 mb-3">Nova Postagem</h3>
+
+    <div class="mb-3">
+      <label class="form-label font-weight-bold">Título</label>
+      <input type="text" class="form-control" [(ngModel)]="novoTitulo" placeholder="Digite o título...">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label font-weight-bold">Mensagem</label>
+      <textarea class="form-control" [(ngModel)]="novaMensagem" rows="3" placeholder="Escreva a mensagem..."></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label font-weight-bold">Imagem</label>
+      <input type="file" class="form-control" (change)="onFileSelected($event)">
+    </div>
+
+    <button class="btn btn-primary" (click)="salvarPostagem()">Publicar</button>
+  </div>
+
+  <!-- Listagem de Postagens -->
+  <div class="row row-cols-1 row-cols-md-2 g-4" *ngIf="postagens.length > 0">
+    <div class="col" *ngFor="let item of postagens">
+      <div class="card h-100 shadow-sm border-0">
+
+        <img *ngIf="formatarImagem(item)" [src]="formatarImagem(item)" class="card-img-top" alt="Imagem da postagem"
+          style="max-height: 250px; object-fit: cover;">
+
+        <div class="card-body">
+          <h5 class="card-title">{{ item.titulo }}</h5>
+          <p class="card-text text-muted">{{ item.mensagem }}</p>
+        </div>
+
+        <div class="card-footer bg-transparent border-top-0 d-flex justify-content-end">
+          <!-- Passa o item inteiro para extrair o id com segurança -->
+          <button class="btn btn-danger btn-sm" (click)="excluirPostagem(getId(item))">Excluir</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
